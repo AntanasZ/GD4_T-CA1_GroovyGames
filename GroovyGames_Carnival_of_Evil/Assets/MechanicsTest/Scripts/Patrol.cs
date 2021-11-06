@@ -32,7 +32,7 @@ public class Patrol : MonoBehaviour
         //trapper uses default speed
         if(agent.tag.Equals("ChaserEnemy"))
         {
-            agent.speed = 5f;
+            agent.speed = 10f;
         }
         else if(agent.tag.Equals("ThrowerEnemy"))
         {
