@@ -17,14 +17,14 @@ public class Timer : MonoBehaviour
     [SerializeField]
     private Text timeText;
 
-    private bool timerIsRunning = false;
+    public bool timerIsRunning = false;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        //start timer
-        timerIsRunning = true;
-    }
+    //void Start()
+    //{
+    //    //start timer
+    //    timerIsRunning = true;
+    //}
 
     // Update is called once per frame
     void Update()
@@ -67,6 +67,15 @@ public class Timer : MonoBehaviour
     {
         timerIsRunning = false;
         displayFinishText("You Win");
+    }
+
+    //if player collides with timer trigger, timer is started
+    public void startTimer()
+    {
+        if(timerIsRunning != true)
+        {
+            timerIsRunning = true;
+        }
     }
 
     //changes timer text to something else

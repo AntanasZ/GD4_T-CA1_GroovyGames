@@ -11,7 +11,7 @@ public class PullLever : MonoBehaviour
     private CorrectLeverOrder correctOrder;
 
     [SerializeField]
-    private Timer timer; //used to call some timer functions
+    private Timer timer; //used to call some timer functionsz
 
     private Ray ray;
     private int leverCount = 0;
@@ -38,8 +38,8 @@ public class PullLever : MonoBehaviour
     // OnMouseOver is called every frame while the mouse is over the GUIElement or Collider
     private void OnMouseOver()
     {
-        //check if there are still levers to pull
-        if(leverCount < 5)
+        //check if there are still levers to pull and timer is active
+        if(leverCount < 5 && timer.GetComponent<Timer>().timerIsRunning)
         {
             //clicking on lever
             if (Input.GetKeyDown(KeyCode.E))
@@ -60,7 +60,7 @@ public class PullLever : MonoBehaviour
                         leverCount++;
                         hitInfo.transform.Rotate(45, 0, 0);
                     }
-                    else
+                    else if(hitInfo.transform.gameObject.tag.Equals("Lever"))
                     {
                         //if false, decrease timer
                         timer.decreaseTime();
@@ -82,7 +82,6 @@ public class PullLever : MonoBehaviour
             return false;
         }
     }
-
     
 
 
