@@ -1,8 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CorrectLeverOrder",
-    menuName = "CollabProj/Types/CorrectLeverOrder",
-    order = 1)]
+    menuName = "CollabProj/Types/CorrectLeverOrder")]
 
 public class CorrectLeverOrder : ScriptableObject
 {
